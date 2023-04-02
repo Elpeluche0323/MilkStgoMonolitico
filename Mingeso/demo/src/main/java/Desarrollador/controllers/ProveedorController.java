@@ -24,7 +24,7 @@ public class ProveedorController {
     public String listar(Model model) {
         ArrayList<ProveedorEntity> proveedores = proveedorService.obtenerProveedores();
         model.addAttribute("proveedores", proveedores);
-        return "index";
+        return "lista-proveedores";
     }
 
     @GetMapping("/nuevo-proveedor")
