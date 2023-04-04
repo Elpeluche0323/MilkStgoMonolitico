@@ -8,17 +8,17 @@
 		<version>2.7.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>tingeso.mingeso</groupId>
-	<artifactId>pep1</artifactId>
+	<groupId>java</groupId>
+	<artifactId>Desarrollador</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Tingeso</name>
+	<name>desarrollo</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
 		<sonar.exclusions>
-			src/main/java/com/example/tingeso/entities/*,
-			src/main/java/com/example/tingeso/controllers/*,
-			src/main/java/com/example/tingeso/repositories/*
+			src/main/java/com/example/desarrollo/entities/*,
+			src/main/java/com/example/desarrollo/controllers/*,
+			src/main/java/com/example/desarrollo/repositories/*
 		</sonar.exclusions>
 	</properties>
 	<dependencies>
