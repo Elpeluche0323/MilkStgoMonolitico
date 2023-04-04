@@ -8,10 +8,10 @@ spring:
     show-sql: true
     hibernate:
       dialect: MySQL8Dialect
-      ddl-auto: update
+      ddl-auto: create-drop
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     dbname: milkstgo
-    url: jdbc:mysql://localhost:3306/
+    url: jdbc:mysql://localhost:3306/milkstgo
     username: root
     password: 123456
