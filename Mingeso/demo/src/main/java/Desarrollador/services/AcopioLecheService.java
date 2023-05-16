@@ -1,7 +1,7 @@
 package Desarrollador.services;
 
-import Desarrollador.entities.SubirDataEntity;
-import Desarrollador.repositories.SubirDataRepository;
+import Desarrollador.entities.AcopioLecheEntity;
+import Desarrollador.repositories.AcopioLecheRepository;
 import lombok.Generated;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,12 +22,12 @@ import java.util.ArrayList;
 public class SubirDataService {
 
     @Autowired
-    private SubirDataRepository dataRepository;
+    private AcopioLecheRepository dataRepository;
 
     private final Logger logg = LoggerFactory.getLogger(SubirDataService.class);
 
-    public ArrayList<SubirDataEntity> obtenerData(){
-        return (ArrayList<SubirDataEntity>) dataRepository.findAll();
+    public ArrayList<AcopioLecheEntity> obtenerData(){
+        return (ArrayList<AcopioLecheEntity>) dataRepository.findAll();
     }
 
     @Generated
@@ -86,19 +86,19 @@ public class SubirDataService {
         }
     }
 
-    public void guardarData(SubirDataEntity data){
+    public void guardarData(AcopioLecheEntity data){
         dataRepository.save(data);
     }
 
     public void guardarDataDB(String fecha, String turno, String proveedor, String kls_leche){
-         SubirDataEntity newData = new SubirDataEntity();
+        AcopioLecheEntity newData = new AcopioLecheEntity();
          newData.setFecha(fecha);
          newData.setTurno(turno);
          newData.setProveedor(proveedor);
          newData.setKls_leche(kls_leche);
          guardarData(newData);
     }
-    public void eliminarData(ArrayList<SubirDataEntity> datas){
+    public void eliminarData(ArrayList<AcopioLecheEntity> datas){
         dataRepository.deleteAll(datas);
     }
 }
