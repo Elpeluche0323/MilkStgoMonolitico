@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "dataGrasaYSolidos")
+@Table(name = "data_grasaysolidos")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -17,7 +17,7 @@ public class GrasaSolidoEntity {
     @Id
     @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ID;
+    private String id;
     private String proveedor;
     private String grasa;
     private String solidoTotal;

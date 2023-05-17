@@ -1,7 +1,7 @@
 package Desarrollador.controllers;
 
-import Desarrollador.entities.SubirDataEntity;
-import Desarrollador.services.SubirDataService;
+import Desarrollador.entities.AcopioLecheEntity;
+import Desarrollador.services.AcopioLecheService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,28 +16,28 @@ import java.util.ArrayList;
 
 @Controller
 @RequestMapping
-public class SubirDataController {
+public class AcopioLecheController {
 
     @Autowired
-    private SubirDataService subirData;
+    private AcopioLecheService subirData;
 
-    @GetMapping("/fileUpload")
+    @GetMapping("/fileUploadAcopioLeche")
     public String main() {
-        return "fileUpload";
+        return "fileUploadAcopioLeche";
     }
 
-    @PostMapping("/fileUpload")
+    @PostMapping("/fileUploadAcopioLeche")
     public String upload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) {
         subirData.guardar(file);
         redirectAttributes.addFlashAttribute("mensaje", "¡Archivo cargado correctamente!");
         subirData.leerCsv("Acopio.csv");
-        return "redirect:/fileUpload";
+        return "redirect:/fileUploadAcopioLeche";
     }
 
     @GetMapping("/fileInformation")
     public String listar(Model model) {
-        ArrayList<SubirDataEntity> datas = subirData.obtenerData();
-        model.addAttribute("datas", datas);
+        ArrayList<AcopioLecheEntity> datas = subirData.obtenerData();
+        model.addAttribute("data_acopio_leche", datas);
         return "fileInformation";
     }
 }

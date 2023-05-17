@@ -19,12 +19,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 @Service
-public class SubirDataService {
+public class AcopioLecheService {
 
     @Autowired
     private AcopioLecheRepository dataRepository;
 
-    private final Logger logg = LoggerFactory.getLogger(SubirDataService.class);
+    private final Logger logg = LoggerFactory.getLogger(AcopioLecheService.class);
 
     public ArrayList<AcopioLecheEntity> obtenerData(){
         return (ArrayList<AcopioLecheEntity>) dataRepository.findAll();

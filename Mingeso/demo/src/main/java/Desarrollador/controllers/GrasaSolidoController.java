@@ -1,7 +1,7 @@
 package Desarrollador.controllers;
 
-import Desarrollador.entities.CargarDataEntity;
-import Desarrollador.services.CargarDataService;
+import Desarrollador.entities.GrasaSolidoEntity;
+import Desarrollador.services.GrasaSolidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,28 +16,30 @@ import java.util.ArrayList;
 
 @Controller
 @RequestMapping
-public class CargarDataController {
+public class GrasaSolidoController {
 
     @Autowired
-    private CargarDataService cargarData;
+    private GrasaSolidoService cargarData;
 
-    @GetMapping("/fileUploadValores")
+    @GetMapping("/fileUploadGrasaSolido")
     public String main() {
-        return "fileUploadValores";
+        return "fileUploadGrasaSolido";
     }
 
-    @PostMapping("/fileUploadValores")
+    @PostMapping("/fileUploadGrasaSolido")
     public String upload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) {
-        cargarData.guardarValores(file);
+        cargarData.guardarGrasaSolido(file);
         redirectAttributes.addFlashAttribute("mensaje", "¡Archivo cargado correctamente!");
-        cargarData.leerCsvValores("valoresGrasaYSolidos.csv");
-        return "redirect:/fileUploadValores";
+        cargarData.leerCsvGrasaSolido("valoresGrasaYSolidos.csv");
+        return "redirect:/fileUploadGrasaSolido";
     }
 
-    @GetMapping("/fileUploadValores")
+   /**
+    @GetMapping("/fileUploadGrasaSolido")
     public String listar(Model model) {
-        ArrayList<CargarDataEntity> dataGrasasYSolidos = cargarData.obtenerDataValores;
-        model.addAttribute("dataGrasasYSolidos", dataGrasasYSolidos);
-        return "fileUploadValores";
+        ArrayList<GrasaSolidoEntity> dataGrasasYSolidos = cargarData.obtenerGrasaSolido();
+        model.addAttribute("data_grasaysolidos", dataGrasasYSolidos);
+        return "fileUploadGrasaSolido";
     }
+    **/
 }

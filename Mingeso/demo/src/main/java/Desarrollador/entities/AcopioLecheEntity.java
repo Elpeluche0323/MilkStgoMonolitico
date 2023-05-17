@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "data")
+@Table(name = "data_acopio_leche")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -17,7 +17,7 @@ public class AcopioLecheEntity {
     @Id
     @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ID;
+    private String id;
     private String fecha;
     private String turno;
     private String proveedor;
