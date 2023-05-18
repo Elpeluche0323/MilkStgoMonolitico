@@ -86,8 +86,8 @@ public class AcopioLecheService {
         }
     }
 
-    public void guardarData(AcopioLecheEntity data){
-        dataRepository.save(data);
+    public void guardarData(AcopioLecheEntity data_acopio_leche){
+        dataRepository.save(data_acopio_leche);
     }
 
     public void guardarDataDB(String fecha, String turno, String proveedor, String kls_leche){

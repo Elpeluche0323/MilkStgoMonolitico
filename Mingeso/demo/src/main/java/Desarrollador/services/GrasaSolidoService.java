@@ -20,7 +20,6 @@ import java.util.ArrayList;
 @Service
 public class GrasaSolidoService {
 
-    public ArrayList<GrasaSolidoEntity> obtenerGrasaSolido;
     @Autowired
     private GrasaSolidoRepository grasaSolidoRepository;
 

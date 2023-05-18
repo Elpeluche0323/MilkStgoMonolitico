@@ -1,0 +1,11 @@
+jenkins.war
+MilkStgoMonolitico/Mingeso/sonarqube-9.9.0.65466
+MilkStgoMonolitico/Mingeso/demo/data
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
