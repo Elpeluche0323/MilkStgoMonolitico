@@ -1,9 +1,25 @@
 package Desarrollador.services;
 
 
+import Desarrollador.entities.AcopioLecheEntity;
+import Desarrollador.entities.AdministracionEntity;
+import Desarrollador.repositories.AcopioLecheRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+
 @Service
 public class AdministracionService {
+
+    /**
+    @Autowired
+    private AdministracionEntity administracionRepository;
+    public ArrayList<AdministracionEntity> obtenerReporte(){
+        return (ArrayList<AdministracionEntity>) administracionRepository.findAll();
+    }
+**/
+
     public int sueldoCategoria(String categoria,Integer kls_leche){
         switch(categoria){
             case "A":
