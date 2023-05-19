@@ -22,12 +22,12 @@ public class AdministracionController {
 
     @Autowired
     private AdministracionService calcularPlanilla;
-
+/**
     @GetMapping("/reporte")
     public String listar(Model model) {
         ArrayList<AdministracionEntity> datas = calcularPlanilla.obtenerReporte();
         model.addAttribute("administracion", datas);
         return "fileInformation";
     }
-
+**/
 }
