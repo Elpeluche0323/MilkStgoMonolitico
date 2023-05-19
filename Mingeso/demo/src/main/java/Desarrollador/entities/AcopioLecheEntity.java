@@ -17,7 +17,7 @@ public class AcopioLecheEntity {
     @Id
     @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private String ID;
     private String fecha;
     private String turno;
     private String proveedor;
