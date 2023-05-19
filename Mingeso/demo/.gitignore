@@ -1,6 +1,6 @@
 jenkins.war
 sonarqube-9.9.0.65466
-demo/data
+data
 
 HELP.md
 target/
