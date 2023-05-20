@@ -21,6 +21,7 @@
 			src/main/java/com/example/desarrollo/repositories/*
 		</sonar.exclusions>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -34,12 +34,10 @@ public class GrasaSolidoController {
         return "redirect:/fileUploadGrasaSolido";
     }
 
-    /**
-    @GetMapping("/fileUploadGrasaSolido")
+    @GetMapping("/fileInformationGS")
     public String listarGrasaSolido(Model model) {
-        ArrayList<GrasaSolidoEntity> dataGrasasYSolidos = cargarData.obtenerGrasaSolido();
-        model.addAttribute("data_grasaysolidos", dataGrasasYSolidos);
-        return "fileUploadGrasaSolido";
+        ArrayList<GrasaSolidoEntity> data_grasaysolidos = cargarData.obtenerGrasaSolido();
+        model.addAttribute("data_grasaysolidos", data_grasaysolidos);
+        return "fileInformationGS";
     }
-    **/
 }
