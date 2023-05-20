@@ -36,8 +36,8 @@ public class AcopioLecheController {
 
     @GetMapping("/fileInformation")
     public String listar(Model model) {
-        ArrayList<AcopioLecheEntity> datas = subirData.obtenerData();
-        model.addAttribute("data_acopio_leche", datas);
+        ArrayList<AcopioLecheEntity> data_acopio_leche = subirData.obtenerData();
+        model.addAttribute("data_acopio_leche", data_acopio_leche);
         return "fileInformation";
     }
 }
