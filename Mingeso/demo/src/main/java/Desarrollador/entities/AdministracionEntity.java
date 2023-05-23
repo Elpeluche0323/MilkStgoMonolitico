@@ -26,6 +26,7 @@ public class AdministracionEntity {
     private String promedio_kls_leche;
     private String variacion_leche;
     private String grasa;
+    private String variacion_grasa;
     private String solidos_totales;
     private String variacion_solidos_totales;
     private String pago_leche;

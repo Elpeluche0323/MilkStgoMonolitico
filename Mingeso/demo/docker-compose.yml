@@ -13,7 +13,7 @@ services:
       - app2
       - app3
   mysql-db:
-    image: mysql
+    image: mysql:latest
     restart: always
     volumes:
       - ./data/db:/var/lib/mysql

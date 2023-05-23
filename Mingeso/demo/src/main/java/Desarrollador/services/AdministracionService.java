@@ -3,36 +3,67 @@ package Desarrollador.services;
 
 import Desarrollador.entities.AcopioLecheEntity;
 import Desarrollador.entities.AdministracionEntity;
-import Desarrollador.repositories.AcopioLecheRepository;
+import Desarrollador.entities.ProveedorEntity;
+import Desarrollador.repositories.AdministracionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 
 @Service
 public class AdministracionService {
 
+
     /**
     @Autowired
     private AdministracionEntity administracionRepository;
+
     public ArrayList<AdministracionEntity> obtenerReporte(){
         return (ArrayList<AdministracionEntity>) administracionRepository.findAll();
     }
-**/
 
-    public int sueldoCategoria(String categoria,Integer kls_leche){
-        switch(categoria){
-            case "A":
-                return (700*kls_leche);
-            case "B":
-                return (550*kls_leche);
-            case "C":
-                return (450*kls_leche);
-            case "D":
-                return (250*kls_leche);
-            default:
-                return 0;
+    @Autowired
+    AdministracionRepository administracionRepository;
+    public void guardarAdministracion(String quincena, String codigo_proveedor, String nombre_proveedor, String total_kls_leche,
+                                      String nro_dias_envio_leche, String promedio_kls_leche, String variacion_leche, String grasa,
+                                      String variacion_grasa, String solidos_totales, String variacion_solidos_totales,
+                                      String pago_leche, String pago_grasa, String pago_solidos_totales, String bonificacion_frecuencia,
+                                      String descuento_variacion_leche, String descuento_variacion_grasa, String descuento_variacion_solidos,
+                                      String pago_total, String monto_retencion, String monto_final) {
+        AdministracionEntity administracion = new AdministracionEntity();
+        administracion.setQuincena(quincena);
+        administracion.setCodigo_proveedor(codigo_proveedor);
+        administracion.setNombre_proveedor(nombre_proveedor);
+        administracion.setTotal_kls_leche(total_kls_leche);
+        administracion.setNro_dias_envio_leche(nro_dias_envio_leche);
+        administracion.setPromedio_kls_leche(promedio_kls_leche);
+        administracion.setVariacion_leche(variacion_leche);
+        administracion.setGrasa(grasa);
+        administracion.setVariacion_grasa(variacion_grasa);
+        administracion.setSolidos_totales(solidos_totales);
+        administracion.setVariacion_solidos_totales(variacion_solidos_totales);
+        administracion.setPago_leche(pago_leche);
+        administracion.setPago_grasa(pago_grasa);
+        administracion.setPago_solidos_totales(pago_solidos_totales);
+        administracion.setBonificacion_frecuencia(bonificacion_frecuencia);
+        administracion.setDescuento_variacion_leche(descuento_variacion_leche);
+        administracion.setDescuento_variacion_grasa(descuento_variacion_grasa);
+        administracion.setDescuento_variacion_solidos(descuento_variacion_solidos);
+        administracion.setPago_total(pago_total);
+        administracion.setMonto_retencion(monto_retencion);
+        administracion.setMonto_final(monto_final);
+        administracionRepository.save(administracion);
+    }
+     **/
+    public int sueldoCategoria(ProveedorEntity categoria, AcopioLecheEntity kls_leche){
+        if (categoria.equals("A")) {
+            return (700 * Integer.parseInt(String.valueOf(kls_leche)));
+        } else if (categoria.equals("B")) {
+            return (550 * Integer.parseInt(String.valueOf(kls_leche)));
+        } else if (categoria.equals("C")) {
+            return (450 * Integer.parseInt(String.valueOf(kls_leche)));
+        } else if (categoria.equals("D")) {
+            return (250 * Integer.parseInt(String.valueOf(kls_leche)));
         }
+        return 0;
     }
 
     public int sueldoGrasa(Integer grasa,Integer kls_leche) {

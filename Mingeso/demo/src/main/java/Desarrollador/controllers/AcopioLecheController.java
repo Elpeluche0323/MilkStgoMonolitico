@@ -23,7 +23,7 @@ public class AcopioLecheController {
 
     @GetMapping("/fileUploadAcopioLeche")
     public String main() {
-        return "fileUploadAcopioLeche";
+        return "/fileUploadAcopioLeche";
     }
 
     @PostMapping("/fileUploadAcopioLeche")
@@ -38,6 +38,13 @@ public class AcopioLecheController {
     public String listar(Model model) {
         ArrayList<AcopioLecheEntity> data_acopio_leche = subirData.obtenerData();
         model.addAttribute("data_acopio_leche", data_acopio_leche);
-        return "fileInformation";
+        return "/fileInformation";
+    }
+
+    @GetMapping("/planillaPagos")
+    public String listaPagos(Model model, String nombre){
+        AcopioLecheEntity data_acopio_leche = subirData.findByName(nombre);
+        model.addAttribute("data_acopio_leche", data_acopio_leche);
+        return "/planillaPagos";
     }
 }

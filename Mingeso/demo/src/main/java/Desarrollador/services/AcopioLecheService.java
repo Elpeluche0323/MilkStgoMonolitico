@@ -1,6 +1,7 @@
 package Desarrollador.services;
 
 import Desarrollador.entities.AcopioLecheEntity;
+import Desarrollador.entities.AdministracionEntity;
 import Desarrollador.repositories.AcopioLecheRepository;
 import lombok.Generated;
 import org.slf4j.Logger;
@@ -30,6 +31,9 @@ public class AcopioLecheService {
         return (ArrayList<AcopioLecheEntity>) dataRepository.findAll();
     }
 
+    public AcopioLecheEntity findByName(String nombre){
+        return dataRepository.findByName(nombre);
+    }
     @Generated
     public String guardar(MultipartFile file){
         String filename = file.getOriginalFilename();

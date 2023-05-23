@@ -23,7 +23,7 @@ public class GrasaSolidoController {
 
     @GetMapping("/fileUploadGrasaSolido")
     public String main() {
-        return "fileUploadGrasaSolido";
+        return "/fileUploadGrasaSolido";
     }
 
     @PostMapping("/fileUploadGrasaSolido")
@@ -38,6 +38,6 @@ public class GrasaSolidoController {
     public String listarGrasaSolido(Model model) {
         ArrayList<GrasaSolidoEntity> data_grasaysolidos = cargarData.obtenerGrasaSolido();
         model.addAttribute("data_grasaysolidos", data_grasaysolidos);
-        return "fileInformationGS";
+        return "/fileInformationGS";
     }
 }

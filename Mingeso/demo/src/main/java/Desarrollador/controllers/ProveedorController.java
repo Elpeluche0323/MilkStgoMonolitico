@@ -24,12 +24,12 @@ public class ProveedorController {
     public String listar(Model model) {
         ArrayList<ProveedorEntity> proveedores = proveedorService.obtenerProveedores();
         model.addAttribute("proveedores", proveedores);
-        return "lista-proveedores";
+        return "/lista-proveedores";
     }
 
     @GetMapping("/nuevo-proveedor")
     public String proveedor(){
-        return "nuevo-proveedor";
+        return "/nuevo-proveedor";
     }
     @PostMapping("/nuevo-proveedor")
     public String nuevoProveedor(@RequestParam("codigo") String codigo,
