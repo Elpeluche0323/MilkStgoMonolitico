@@ -1,7 +1,6 @@
 package Desarrollador.repositories;
 
 import Desarrollador.entities.AcopioLecheEntity;
-import Desarrollador.entities.ProveedorEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -20,9 +19,5 @@ public interface AcopioLecheRepository extends JpaRepository <AcopioLecheEntity,
     String findCategory(@Param("codigo") String codigo);
 
 
-
-// SELECT data_acopio_leche.* FROM data_acopio_leche
-    // JOIN proveedores ON data_acopio_leche.proveedor = proveedores.codigo
-    // WHERE proveedores.nombre = "un nombre ingresado"
 
 }

@@ -8,17 +8,10 @@ import Desarrollador.repositories.AdministracionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 public class AdministracionService {
-
-
-    /**
-    @Autowired
-    private AdministracionEntity administracionRepository;
-
-    public ArrayList<AdministracionEntity> obtenerReporte(){
-        return (ArrayList<AdministracionEntity>) administracionRepository.findAll();
-    }
 
     @Autowired
     AdministracionRepository administracionRepository;
@@ -52,7 +45,11 @@ public class AdministracionService {
         administracion.setMonto_final(monto_final);
         administracionRepository.save(administracion);
     }
-     **/
+
+    public ArrayList<AdministracionEntity> obtenerReporte(){
+        return (ArrayList<AdministracionEntity>) administracionRepository.findAll();
+    }
+
     public int sueldoCategoria(ProveedorEntity categoria, AcopioLecheEntity kls_leche){
         if (categoria.equals("A")) {
             return (700 * Integer.parseInt(String.valueOf(kls_leche)));

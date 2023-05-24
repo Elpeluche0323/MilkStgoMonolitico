@@ -111,7 +111,26 @@
                        placeholder="Ingrese el nombre del proveedor" name="nombre" required>
             </div>
 
-            <button type="submit">Buscar</button>
+            <a class = "btn-2" href="/planillaPagos?nombre="+name><button type="submit">Buscar</button></a>
+
+            <table th:border = "1" class = "content-table">
+                <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Nombre</th>
+                    <th>Categoria</th>
+                    <th>Retencion</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="proveedores:${proveedores}">
+                    <td th:text="${proveedores.codigo}"></td>
+                    <td th:text="${proveedores.nombre}"></td>
+                    <td th:text="${proveedores.categoria}"></td>
+                    <td th:text="${proveedores.retencion}"></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </form>
 </div>

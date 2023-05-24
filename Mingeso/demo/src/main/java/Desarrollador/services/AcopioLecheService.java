@@ -1,7 +1,6 @@
 package Desarrollador.services;
 
 import Desarrollador.entities.AcopioLecheEntity;
-import Desarrollador.entities.AdministracionEntity;
 import Desarrollador.repositories.AcopioLecheRepository;
 import lombok.Generated;
 import org.slf4j.Logger;
@@ -102,7 +101,9 @@ public class AcopioLecheService {
          newData.setKls_leche(kls_leche);
          guardarData(newData);
     }
+    /*
     public void eliminarData(ArrayList<AcopioLecheEntity> data_acopio_leche){
         dataRepository.deleteAll(data_acopio_leche);
     }
+     */
 }
